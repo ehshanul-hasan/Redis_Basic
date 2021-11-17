@@ -10,4 +10,4 @@ docker exec -it local-redis /bin/bash
 redis-cli
 
 # Nuget Package for Redis
-StackExchange.Redis
+Microsoft.Extensions.Caching.StackExchangeRedis
