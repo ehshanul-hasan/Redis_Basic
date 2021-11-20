@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  testdb:
+        image: redis:alpine
+
+  redis_basic:
+    image: ${DOCKER_REGISTRY-}redisbasic
+    build:
+      context: .
+      dockerfile: Redis_Basic/Dockerfile

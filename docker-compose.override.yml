@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  testdb:
+    container_name: testdb
+    restart: always    
+    ports:
+        - "6379:6379"
+
+  redis_basic:
+    container_name: test.redis
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "RedisSettings:ConnectionString=testdb:6379"
+    depends_on:
+      - testdb
+    ports:
+      - "8001:80"
